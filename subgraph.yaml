@@ -21,7 +21,7 @@ dataSources:
         - name: AlpaCore
           file: ./abis/AlpaCore.json
       eventHandlers:
-- event: BornSingle(uint256 indexed alpacaId, uint256 gene, uint256 energy)
-handler: handleBornSingle
-- event: BornBatch(uint256[] alpacaIds, uint256[] genes, uint256[] energy)
-handler: handle BornBatch
+        - event: BornSingle(uint256 indexed alpacaId, uint256 gene, uint256 energy)
+      handler: handleBornSingle
+        - event: BornBatch(uint256[] alpacaIds, uint256[] genes, uint256[] energy)
+      handler: handle BornBatch
