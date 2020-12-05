@@ -1,0 +1,25 @@
+type Alpaca @entity {
+  id: AlpacaID!
+  owner: Bytes
+  displayName: String
+  imageUrl: String
+  accepted: Boolean
+}
+
+
+import { BornSingle, BornBatch } from '../generated/AlpaCore/AlpaCore'
+import { AlpaCore } from '../generated/schema'
+
+export function handleBornSingle (event: BornSingle)
+  AlpaCore.owner = event.params.owner
+  AlpaCore.displayName = event.params.displayName
+  AlpaCore.imageUrl = event.params.imageUrl
+  AlpaCore.save()
+}
+
+export function handleBornBatch(event: BornBatch)
+  AlpaCore.owner = event.params.owner
+  AlpaCore.displayName = event.params.displayName
+  AlpaCore.imageUrl = event.params.imageUrl
+  AlpaCore.save()
+}
